@@ -11,3 +11,9 @@ gst-launch-1.0 v4l2src device=/dev/video0 ! 'video/x-raw, format=YUY2, width=192
 # Get the 4k stream
 gst-launch-1.0 v4l2src device=/dev/video0 ! image/jpeg,width=3840,height=2160,framerate=30/1 ! \
   queue ! vaapijpegdec ! videoconvert ! queue ! autovideosink
+
+# See also gst.py!
+
+# Other python examples:
+# https://blogs.gnome.org/uraeus/2012/11/08/gstreamer-python-and-videomixing/
+# https://brettviren.github.io/pygst-tutorial-org/pygst-tutorial.html
