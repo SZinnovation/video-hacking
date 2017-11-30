@@ -4,13 +4,22 @@ $ https://gstreamer.freedesktop.org/documentation/frequently-asked-questions/usi
 # Show a list of installed plugins
 gst-inspect-1.0
 
-
 # Play a stream to X11 window
 gst-launch-1.0 v4l2src device=/dev/video0 ! 'video/x-raw, format=YUY2, width=1920, height=1080, framerate=30/1' ! videoconvert ! ximagesink
 
 # Get the 4k stream
 gst-launch-1.0 v4l2src device=/dev/video0 ! image/jpeg,width=3840,height=2160,framerate=30/1 ! \
   queue ! vaapijpegdec ! videoconvert ! queue ! autovideosink
+
+# Write a stream - maxbitrate is 0 by default!
+.\gst-launch-1.0.exe -e autovideosrc ! videoconvert ! openh264enc max-bitrate=256000 ! h264parse ! \
+  mp4mux ! filesink location=somefile.mp4
+
+# YouTube recommended bitrates, etc:
+# https://support.google.com/youtube/answer/1722171?hl=en
+
+# On windows at least, can use
+gst-launch-1.0 autovideosrc ! autovideosink
 
 # See also gst.py!
 

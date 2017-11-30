@@ -4,7 +4,7 @@
 import os
 import gi
 gi.require_version('Gst', '1.0')
-from gi.repository import Gst Gobject
+from gi.repository import Gst, Gobject
 
 Gobject.threads_init()
 Gst.init(None)
