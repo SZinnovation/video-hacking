@@ -23,6 +23,13 @@ gst-launch-1.0 -e v4l2src device=/dev/video1 ! \
 .\gst-launch-1.0.exe -e autovideosrc ! videoconvert ! openh264enc max-bitrate=256000 ! h264parse ! \
   mp4mux ! filesink location=somefile.mp4
 
+# Work on Monolith
+# This seems smooth enough, honestly. Note that including an explicit video format breaks the pipeline
+
+gst-launch-1.0 -e v4l2src device=/dev/video0 ! \
+  'video/x-raw, width=1280, height=720, framerate=15/1' ! \
+  queue ! videoconvert ! x264enc ! qtmux ! filesink location=~/gst-video.mov
+
 
 # On windows at least, can use
 gst-launch-1.0 autovideosrc ! autovideosink
