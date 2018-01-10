@@ -30,3 +30,7 @@ yet. We'll stick with the above for now.
     # -i input.mp4 \
     -f v4l2 -framerate 30 -video_size hd1080 -pixel_format yuv420p -i /dev/video0 \
     -c:v h264_vaapi output.mov
+
+We need to convert existing mkv files to mp4 to play in browsers, e.g.:
+
+ffmpeg -i my_video-10.mkv -c:v libx264 -c:a mp3 -movflags faststart my_video-10-conv.mp4
