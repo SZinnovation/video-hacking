@@ -21,7 +21,14 @@ This works, docs had -hwaccel_device, but that doesn't use the VAAPI HW accel.
 like gstreamer (and intel_gpu_top remains flat):
 
   ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 \
-    -f v4l2 -framerate 30 -video_size hd1080 -pixel_format yuv420p -i /dev/video0 output.mov
+    -f v4l2 -framerate 30 -video_size hd1080 -pixel_format yuv420p -i /dev/video0 \
+    -c:v libx264 -pix_fmt yuv420p output.mp4
+
+Or a similar command with VDPAU (also specifying an mjpeg stream), added the
+superfast option and dropped a seemingly superfluous -pix_fmt argument.
+
+ ffmpeg -hwaccel vdpau -f v4l2 -framerate 30 -video_size hd1080 -input_format mjpeg -i /dev/video0
+    -c:v libx264 -preset superfast output.mp4
 
 This is a full pipeline trying to do hwaccel'd transcoding, but it doesn't work
 yet. We'll stick with the above for now.

@@ -6,5 +6,9 @@ mjpeg, though). The best way to look at modes for now seems to be:
 
 v4l2-ctl --list-formats-ext
 
+Or actually, this is much more concise (but without framerate):
+
+ffmpeg -f v4l2 -list_formats all -i /dev/video0
+
 Writing this up helped me figure out that a USB-A to USB-C converter cable
 actually fixes the issue!
