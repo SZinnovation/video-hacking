@@ -1,3 +1,5 @@
+# Video
+
 Linux support for UVC 1.5 is likely still spotty. While I get full support for
 the brio on the NUC USB-A ports, the USB-C port gives me trouble with greatly
 reduced bandwidth modes (despite actually higher bandwidth on the port!). For
@@ -12,3 +14,8 @@ ffmpeg -f v4l2 -list_formats all -i /dev/video0
 
 Writing this up helped me figure out that a USB-A to USB-C converter cable
 actually fixes the issue!
+
+# Audio
+
+A quick way to list audio cards is with `arecord -l`. You can get the card
+number and specify to ffmpeg as `-i hw:<number>`
