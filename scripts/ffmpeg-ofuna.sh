@@ -22,5 +22,5 @@ ffmpeg -hwaccel vaapi \
   -codec:v libx264 \
   -pix_fmt yuv420p \
   -preset veryfast \
-  -t 10 \
+  -t 40:00 \
   output.mp4
