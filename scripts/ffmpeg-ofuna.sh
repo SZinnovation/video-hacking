@@ -5,10 +5,12 @@
 # Don't think I need this, but can supply right after hwaccel if needed
 # -vaapi_device /dev/dri/renderD128 \
 
-    # Removed from acodec section (for output)
+# Removed from acodec section (for output) - no longer needed for aac on more
+# recent versions of ffmpeg
 # -strict -2 \
 
-# This seems necessary but not sufficient for the XBox microphone
+# This seems necessary but not sufficient for the XBox microphone, which has 4
+# channels. We should explore using two for one camera and two for the other!
 # -codec:a pcm_s32le \
 
 ffmpeg -hwaccel vaapi \
