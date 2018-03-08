@@ -13,16 +13,20 @@
 # channels. We should explore using two for one camera and two for the other!
 # -codec:a pcm_s32le \
 
+dt=$(date +%Y%m%dT%H%M)
+desc=${1:-unknown}
+
 ffmpeg -hwaccel vaapi \
-  -f v4l2 -framerate 30 -video_size hd720 -input_format yuv420p \
+  -f v4l2 -framerate 30 -video_size hd1080 -input_format yuv420p \
   -thread_queue_size 1024 \
   -i /dev/video0 \
   -f alsa -thread_queue_size 1024 \
-  -i hw:1 \
+  -i hw:3 \
   -threads 4 \
   -codec:a aac \
   -codec:v libx264 \
   -pix_fmt yuv420p \
   -preset veryfast \
-  -t 40:00 \
-  output.mp4
+  -movflags faststart \
+  -t 53:00 \
+  ${dt}-ofuna-${desc}-video0-alsa3-hd1080.mp4

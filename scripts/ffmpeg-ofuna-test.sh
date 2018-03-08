@@ -27,5 +27,6 @@ ffmpeg -hwaccel vaapi \
   -codec:v libx264 \
   -pix_fmt yuv420p \
   -preset veryfast \
+  -movflags faststart \
   -t 5 \
   ${dt}-ofuna-${desc}-video0-alsa3-hd720.mp4
