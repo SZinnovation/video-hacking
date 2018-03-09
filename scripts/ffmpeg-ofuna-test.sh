@@ -21,7 +21,7 @@ ffmpeg -hwaccel vaapi \
   -thread_queue_size 1024 \
   -i /dev/video0 \
   -f alsa -thread_queue_size 1024 \
-  -i hw:3 \
+  -i hw:1 \
   -threads 4 \
   -codec:a aac \
   -codec:v libx264 \
