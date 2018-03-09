@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # The only GPU in szproto is the integrated intel GPU (which is actually pretty
 # good for video encoding, but folks claim that CPU encoding with x264 yeilds
 # better quality, and is fast enough).
