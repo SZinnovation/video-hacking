@@ -30,5 +30,5 @@ ffmpeg -hwaccel vaapi \
   -pix_fmt yuv420p \
   -preset veryfast \
   -movflags faststart \
-  -t 53:00 \
+  -t 49:00 \
   ${dt}-ofuna-${desc}-video0-alsa1-hd1080.mp4
