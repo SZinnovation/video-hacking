@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Note that older versions of ffmpeg needed -strict -2 for aac support. This is
 # no longer the case
 ffmpeg -hwaccel cuvid \

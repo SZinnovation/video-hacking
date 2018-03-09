@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ffmpeg -hwaccel vdpau \
   -f v4l2 -framerate 30 -video_size hd720 -input_format mjpeg \
   -thread_queue_size 1024 \
