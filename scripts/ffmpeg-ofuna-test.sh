@@ -29,4 +29,4 @@ ffmpeg -hwaccel vaapi \
   -preset veryfast \
   -movflags faststart \
   -t 5 \
-  ${dt}-ofuna-${desc}-video0-alsa3-hd720.mp4
+  ${dt}-ofuna-${desc}-video0-alsa1-hd720.mp4
