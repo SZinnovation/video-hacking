@@ -38,5 +38,5 @@ ffmpeg -hwaccel vaapi \
   -preset faster \
   -crf 20 \
   -pix_fmt yuv420p \
-  -t 49:00 \
+  -t 48:00 \
   ${dt}-ofuna-${desc}-video0-alsa1-hd1080.mp4
