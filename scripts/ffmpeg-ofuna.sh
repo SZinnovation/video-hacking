@@ -26,7 +26,8 @@
 dt=$(date +%Y%m%dT%H%M)
 desc=${1:-unknown}
 
-ffmpeg -hwaccel vaapi \
+ffmpeg -hide_banner -nostats \
+  -hwaccel vaapi \
   -f v4l2 -framerate 30 -video_size hd1080 -input_format yuv420p \
   -thread_queue_size 1024 \
   -i /dev/video0 \
