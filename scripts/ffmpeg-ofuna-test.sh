@@ -10,8 +10,8 @@ ffmpeg -hide_banner -nostats \
   -f v4l2 -framerate 30 -video_size hd720 -input_format yuv420p \
   -thread_queue_size 1024 \
   -i /dev/video0 \
-  -f alsa -thread_queue_size 1024 \
-  -i hw:1 \
+  -f pulse -thread_queue_size 1024 \
+  -i 1 \
   -threads 4 \
   -codec:a aac \
   -codec:v libx264 \
