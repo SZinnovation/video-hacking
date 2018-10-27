@@ -27,6 +27,7 @@ dt=$(date +%Y%m%dT%H%M)
 desc=${1:-unknown}
 video=${2:-video0}
 alsa=${3:-0}
+dur=${4:-48:00}
 
 ffmpeg -hide_banner -nostats \
   -hwaccel vaapi \
