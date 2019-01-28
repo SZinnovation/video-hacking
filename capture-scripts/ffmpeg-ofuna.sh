@@ -43,5 +43,5 @@ ffmpeg -hide_banner -nostats \
   -preset veryfast \
   -crf 20 \
   -pix_fmt yuv420p \
-  -t 48:00 \
+  -t $dur \
   /data/${dt}-ofuna-${desc}-${video}-alsa${alsa}-hd1080.mp4
